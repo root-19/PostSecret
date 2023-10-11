@@ -366,8 +366,8 @@ h1 {
   }
 
   .header .menu {
-    width: 100%;
-    z-index: 210;
+    width: %0%;
+    z-index: 200;
     position: fixed;
     left: 50%;
     top: 50%;
@@ -380,7 +380,7 @@ h1 {
 
   .header .menu li {
     opacity: 0;
-    width: 100%;
+    width: 50%;
     transition: 0.5s;
   }
 
@@ -393,9 +393,9 @@ h1 {
   }
 
   .header .menu li a {
-    font-size: 26px;
+    font-size: 24px;
     line-height: 34px;
-    font-weight: 700;
+    font-weight: 600;
     color: #fff;
   }
 }
