@@ -128,3 +128,20 @@
     background: white;
     color: #ff6f47;
   }
+ form input,
+    form button {
+      font-size: 1.5rem;
+    }
+  
+    .todo-list {
+      min-width: 50%;
+    }
+  
+    .todo {
+      font-size: 1.2rem;
+    }
+  
+    select {
+      padding: 0.5rem;
+      width: 8rem;
+    }
