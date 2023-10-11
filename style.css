@@ -154,248 +154,138 @@ body{
   
 }
 /***********************************/
-@import url(https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic);
-
-body {
-  height: 300vh;
-  font-family: "Roboto";
-  overflow-x: hidden;
-}
-
-body.hidden {
-  overflow: hidden;
-}
-
 a {
   color: #000;
+}
+
+/* header */
+
+.header {
+  background-color: #f3e7ea;
+  position: fixed;
+  width: 100%;
+  z-index: 3;
+  margin-top: -15px;
+}
+
+.header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  background-color: #f3e7ea;
+}
+
+.header li a {
+  display: block;
+  padding: 20px 20px;
+  border-right: 1px solid #f4f4f4;
   text-decoration: none;
 }
 
-.container {
-  max-width: 1200px;
-  padding: 0 15px;
-  margin: 0 auto;
-}
-
-h1 {
-  font-size: 45px;
-  line-height: 65px;
-  text-align: center;
-  width: 60%;
-  height: 80vh;
-  display: flex;
-  margin: 0 auto;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Header */
-.header {
-  padding-top: 20px;
-}
-
-.header .nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.header li a:hover,
+.header .menu-btn:hover {
+  background-color: #f4f4f4;
 }
 
 .header .logo {
-  font-size: 32px;
-  line-height: 42px;
-  text-transform: uppercase;
-  font-weight: 900;
+  display: block;
+  float: left;
+  font-size: 2em;
+  padding: 10px 20px;
+  text-decoration: none;
 }
+
+/* menu */
 
 .header .menu {
-  display: flex;
-  align-items: center;
+  clear: both;
+  max-height: 0;
+  transition: max-height .2s ease-out;
+
 }
 
-.header .menu .item {
-  position: relative;
-  font-size: 14px;
-  line-height: 16px;
-  padding-bottom: 5px;
-}
+/* menu icon */
 
-.header .menu .item a {
-  transition: 0.3s;
-}
-
-.header .menu .item:not(:last-child) {
-  margin-right: 20px;
-}
-
-.header .menu .item::after {
-  content: "";
-  background-color: #000;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0%;
-  height: 2px;
-  transition: 0.3s;
-}
-
-.header .menu .item.active::after {
-  width: 50%;
-}
-
-.header .menu .item:hover::after {
-  width: 50%;
-}
-
-/* Hamburger */
-.header .hamburger {
-  display: none;
+.header .menu-icon {
   cursor: pointer;
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  width: 25px;
-  z-index: 200;
-}
-
-.header .hamburger::before {
-  content: "";
-  position: absolute;
-  background-color: #000;
-  top: -70px;
-  right: -69px;
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  transition: 0.3s cubic-bezier(0.04, -0.1, 0.29, 0.98);
-}
-
-.header .hamburger span {
+  display: inline-block;
+  float: right;
+  padding: 28px 20px;
   position: relative;
+  user-select: none;
+}
+
+.header .menu-icon .navicon {
+  background: #333;
   display: block;
+  height: 2px;
+  position: relative;
+  transition: background .2s ease-out;
+  width: 18px;
+}
+
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+  background: #333;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
   width: 100%;
-  height: 3px;
-  border-radius: 2px;
-  background-color: #ffb3c6;
-  transition: 0.2s;
-  z-index: 110;
 }
 
-.header .hamburger span:not(:last-child) {
-  margin-bottom: 5px;
+.header .menu-icon .navicon:before {
+  top: 5px;
 }
 
-.header .hamburger span:nth-child(2) {
-  transition: opacity 0.1s;
-  opacity: 1;
+.header .menu-icon .navicon:after {
+  top: -5px;
 }
 
-/* When opening the menu */
-.header.mobile span:nth-child(1) {
-  transform: rotate(-225deg) translate(7px, -6px);
+/* menu btn */
+
+.header .menu-btn {
+  display: none;
 }
 
-.header.mobile span:nth-child(3) {
-  transform: rotate(225deg) translate(6px, 5px);
+.header .menu-btn:checked ~ .menu {
+  max-height: 240px;
 }
 
-.header.mobile span:nth-child(2) {
-  opacity: 0;
+.header .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
 }
 
-.header.mobile .hamburger::before {
-  width: 100vh;
-  height: 100vh;
-  transform: scale(5);
-  transition-duration: 0.5s;
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
 }
 
-.header.mobile .menu__wrapper {
-  opacity: 1;
-  pointer-events: visible;
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
 }
 
-.header.mobile .menu__list-item:nth-child(1) {
-  transition-delay: 0.4s;
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
 }
 
-.header.mobile .menu__list-item:nth-child(2) {
-  transition-delay: 0.47s;
-}
+/* 48em = 768px */
 
-.header.mobile .menu__list-item:nth-child(3) {
-  transition-delay: 0.54s;
-}
-
-.header.mobile .menu__list-item:nth-child(4) {
-  transition-delay: 0.61s;
-}
-
-.header.mobile .menu__list-item:nth-child(5) {
-  transition-delay: 0.68s;
-}
-
-.header.mobile .item {
-  opacity: 1;
-}
-
-/* Media */
-@media (max-width: 900px) {
-  .header {
-    padding-top: 15px;
-    z-index: 150;
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 50px;
-    margin-top: 0;
-    margin-bottom: 0;
+@media (min-width: 48em) {
+  .header li {
+    float: left;
   }
-
-  .header .hamburger {
-    display: block;
+  .header li a {
+    padding: 20px 30px;
   }
-
-  .header .menu__wrapper {
-    pointer-events: none;
-    opacity: 0;
-  }
-
   .header .menu {
-    width: %0%;
-    z-index: 200;
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transform: translate(-50%, -50%);
-    text-align: center;
+    clear: none;
+    float: right;
+    max-height: none;
   }
-
-  .header .menu li {
-    opacity: 0;
-    width: 50%;
-    transition: 0.5s;
-  }
-
-  .header .menu li:not(:last-child) {
-    margin-right: 0px;
-  }
-
-  .header .menu li::after {
+  .header .menu-icon {
     display: none;
-  }
-
-  .header .menu li a {
-    font-size: 24px;
-    line-height: 34px;
-    font-weight: 600;
-    color: #fff;
   }
 }
