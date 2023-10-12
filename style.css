@@ -71,7 +71,7 @@ body{
 .post p:nth-child(2) {
     font-size: 16px;
   overflow: hidden;
-  font-family: Cursive;
+  font-family: fantasy;
     justify-content: center;
     margin-top: 15px;
     padding: 3px; /* Add padding for better readability */
