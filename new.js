@@ -22,10 +22,15 @@ function displayPosts() {
     const postsList = document.getElementById("posts-list");
     postsList.innerHTML = "";
  
-    try {
+    
+try {
+        if (Array.isArray(posts)) {
+            for (let index = posts.length - 1; index >= 0; index--) {
+                const post = posts[index];
+/* * * try {
         if (Array.isArray(posts)) {
             for (let index = 0; index < posts.length; index++) {
-                const post = posts[index];
+                const post = posts[index];***/
                 const postDiv = document.createElement("div");
                 postDiv.className = "post";
                 postDiv.innerHTML = `
