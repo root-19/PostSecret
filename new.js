@@ -62,7 +62,7 @@ async function addPost(text, anonymous) {
         likes: 0,
         comments: [],      image:"https://beebom.com/wp-content/uploads/2023/04/featured-new.jpg?w=730&h=487&crop=1&quality=75", 
     };
-    posts.push(newPost);
+    posts.sort(newPost);
     const response = await fetch('https://liby.wasieacuna.repl.co/addpost', {
         method: 'POST',
         headers: {
