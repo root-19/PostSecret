@@ -53,7 +53,7 @@ function displayPosts() {
 }
  
 async function addPost(text, anonymous) {
-    const currentDate = Date.now();
+    const currentDate = new Date();
     const datetime = currentDate.toLocaleString();
     const newPost = {
         text,
