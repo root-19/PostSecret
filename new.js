@@ -95,6 +95,13 @@ document.getElementById("post-button").addEventListener("click", () => {
     }
 });
 
+//function text detector
+function containWords(text) {
+const response = badwords.filter('Hello fuck you...');
+console.log(response); 
+}
+
+/*****
 function containsBadWords(text) {
     const badWords = [
         "profanity",
@@ -156,7 +163,7 @@ function containsBadWords(text) {
     
     return false; 
 }
-
+*****/
 /** 
 document.getElementById("post-button").addEventListener("click", () => {
     const postText = document.getElementById("post-text").value;
