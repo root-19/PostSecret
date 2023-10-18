@@ -95,6 +95,12 @@ document.getElementById("post-button").addEventListener("click", () => {
     }
 });
 
+//new function detector
+function containBadWords(text) {
+const response = badwords.filter('Hello fuck you...');
+console.log(response); 
+}
+/****
 function containsBadWords(text) {
     const badWords = [
         "profanity",
@@ -155,7 +161,7 @@ function containsBadWords(text) {
     }
     
     return false; 
-}
+}*///
 
 /** 
 document.getElementById("post-button").addEventListener("click", () => {
